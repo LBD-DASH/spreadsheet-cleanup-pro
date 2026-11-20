@@ -1,0 +1,35 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import Faq from '../../components/Faq.astro';
+import Cta from '../../components/Cta.astro';
+import { faqLd } from '../../lib/faq';
+import { withBase, absUrl, SITE_NAME } from '../../lib/url';
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  return services.map((s) => ({ params: { slug: s.id }, props: { entry: s } }));
+}
+const { entry } = Astro.props;
+const d = entry.data;
+const { Content } = await render(entry);
+const jsonLd = [
+  { '@context': 'https://schema.org', '@type': 'Service', name: d.title, description: d.description, provider: { '@type': 'Organization', name: SITE_NAME }, url: absUrl(`services/${entry.id}/`, Astro.site) },
+  faqLd(d.faq),
+];
+---
+<Base title={d.title} description={d.description} path={`services/${entry.id}/`} jsonLd={jsonLd}>
+  <PageHead title={d.title} lead={d.summary} />
+  <div class="wrap page-body"><div class="read">
+    <p><strong>Best for:</strong> {d.forWho}</p>
+    <div class="prose"><Content /></div>
+    <h2>What you provide</h2>
+    <ul>{d.youProvide.map((x) => <li>{x}</li>)}</ul>
+    <h2>What you receive</h2>
+    <ul>{d.youReceive.map((x) => <li>{x}</li>)}</ul>
+    <h2>Questions about this service</h2>
+    <Faq items={d.faq} />
+    <p><a href={withBase('services/')}>All services</a> &middot; <a href={withBase('faq/')}>General FAQ</a></p>
+    <Cta />
+  </div></div>
+</Base>

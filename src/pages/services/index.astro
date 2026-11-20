@@ -1,0 +1,17 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import Cta from '../../components/Cta.astro';
+import { withBase } from '../../lib/url';
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+---
+<Base title="Services: cleanup, deduplication, dashboards and reports" description="Spreadsheet cleanup, deduplication and standardisation, dashboards and recurring reports for small firms. Every project is quoted individually." path="services/">
+  <PageHead title="Services" lead="Four related services, usually done in this order. Every project is scoped and quoted individually." />
+  <div class="wrap page-body">
+    <div class="grid">
+      {services.map((s) => <div class="card"><h3><a href={withBase(`services/${s.id}/`)}>{s.data.title}</a></h3><p>{s.data.summary}</p><p><strong>Best for:</strong> {s.data.forWho}</p></div>)}
+    </div>
+    <Cta />
+  </div>
+</Base>
