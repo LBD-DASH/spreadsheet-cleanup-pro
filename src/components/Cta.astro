@@ -1,0 +1,5 @@
+---
+import { withBase, CTA } from '../lib/url';
+const { text = 'Tell us about your spreadsheets and we will reply with a scoped quote once enquiries open.' } = Astro.props;
+---
+<div class="cta-band"><p>{text}</p><a class="btn" href={withBase('request-a-quote/')}>{CTA}</a></div>
