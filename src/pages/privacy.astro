@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import { withBase } from '../lib/url';
+---
+<Base title="Privacy and client data handling" description="How Spreadsheet Cleanup Pro handles visitor and client data: what this site collects, and our commitment that client data never goes to external AI models." path="privacy/">
+  <PageHead title="Privacy and client data handling" lead="Last updated 20 Nov 2026." />
+  <div class="wrap page-body"><div class="read">
+    <h2>This website</h2>
+    <p>This website does not have a contact form, accounts or comments, and we have not added analytics or advertising trackers. It does not set cookies of its own. It is hosted on GitHub Pages, and GitHub may log visits under its own privacy terms.</p>
+    <h2>Client data: our commitments</h2>
+    <ul>
+      <li><strong>Client data never goes to external AI models.</strong> This is a commitment we make to every client. If we ever wanted to change it, we would need your written agreement first.</li>
+      <li>We agree with you how files are transferred before you send anything.</li>
+      <li>We work on a copy of your file and leave your original untouched.</li>
+      <li>We use client data only for the work you asked for.</li>
+      <li>We agree with you what happens to files when the project ends, including deletion on request.</li>
+    </ul>
+    <h2>What we do not claim</h2>
+    <p>We do not currently hold any security certification or audit, and we do not claim any. We are a small service, and we will describe our actual practices to you in writing on request, before you decide to share data.</p>
+    <h2>Quote enquiries</h2>
+    <p>Enquiries are not open yet. When they open, please do not include client data in a first message. We will describe how enquiry details are used on this page at that time.</p>
+    <h2>Questions</h2>
+    <p>A contact method will be added to the <a href={withBase('request-a-quote/')}>Request a quote</a> page.</p>
+  </div></div>
+</Base>

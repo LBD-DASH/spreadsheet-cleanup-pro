@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Cta from '../components/Cta.astro';
+import { withBase } from '../lib/url';
+---
+<Base title="How it works" description="How a Spreadsheet Cleanup Pro project runs, from first enquiry and written scope to delivery of a cleaned file, with a person checking the work." path="how-it-works/">
+  <PageHead title="How it works" lead="A plain description of the process. Details and timing are agreed per project in your quote." />
+  <div class="wrap page-body"><div class="read">
+    <ol class="steps">
+      <li><strong>Request a quote.</strong> Tell us what the spreadsheets are, what is wrong with them and what you want at the end. Please do not send client data at this stage.</li>
+      <li><strong>Scope in writing.</strong> We reply with what we propose to do, what we need from you and the price. Nothing starts until you agree.</li>
+      <li><strong>Safe transfer.</strong> We agree with you how the file reaches us before you send it. See the <a href={withBase('privacy/')}>privacy page</a>.</li>
+      <li><strong>Cleanup on a copy.</strong> AI-assisted tooling helps find and fix patterns. A person reviews the output. Your original file is untouched.</li>
+      <li><strong>Delivery with a change list.</strong> You get the cleaned file and a written list of what changed and what we could not resolve without you.</li>
+      <li><strong>Your review.</strong> You check it, answer open questions, and we adjust within the agreed scope.</li>
+      <li><strong>Optional next step.</strong> If wanted, we build a dashboard or set up a recurring report on the cleaned data.</li>
+    </ol>
+    <div class="note"><strong>Honest limits.</strong> We cannot recover information that is not in your data, and we do not guess at ambiguous values. We make no promises about time saved or results; we describe the work and you judge it.</div>
+    <Cta />
+  </div></div>
+</Base>

@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import { withBase } from '../lib/url';
+---
+<Base title="Request a quote" description="Quote enquiries for Spreadsheet Cleanup Pro are opening soon. This page will carry the contact method once it is set up." path="request-a-quote/">
+  <PageHead title="Request a quote" lead="Enquiries are opening soon." />
+  <div class="wrap page-body"><div class="read">
+    <div class="note">
+      <p><strong>We are not taking enquiries through this site yet.</strong> There is no form or email address here on purpose: we would rather show nothing than a contact route that does not work or that collects your details without being ready to handle them properly.</p>
+      <p>This page will be updated with the way to contact us as soon as it is set up.</p>
+    </div>
+    <h2>What to have ready when it opens</h2>
+    <ul>
+      <li>A short description of the spreadsheets and what is wrong with them</li>
+      <li>What you want at the end: clean records, a dashboard, a recurring report, or a mix</li>
+      <li>How often the data changes</li>
+    </ul>
+    <p>Please do not send client data in a first enquiry. See the <a href={withBase('privacy/')}>privacy page</a> and <a href={withBase('how-it-works/')}>how it works</a>.</p>
+  </div></div>
+</Base>

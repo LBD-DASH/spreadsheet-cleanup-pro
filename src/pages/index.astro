@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Cta from '../components/Cta.astro';
+import { withBase, CTA } from '../lib/url';
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+---
+<Base title="AI-assisted spreadsheet cleanup and reporting for small firms" description="Spreadsheet Cleanup Pro turns messy spreadsheets into clean records, dashboards and recurring reports for small firms. Request a quote." path="">
+  <section class="hero"><div class="wrap">
+    <p class="eyebrow">Data cleanup and reporting for small firms</p>
+    <h1>Messy spreadsheets in. Clean records and clear reports out.</h1>
+    <p>We use AI-assisted tooling, with a person checking the work, to tidy your spreadsheets and set up dashboards and recurring reports. Your client data is never sent to external AI models.</p>
+    <p><a class="btn" href={withBase('request-a-quote/')}>{CTA}</a> &nbsp; <a class="btn ghost" style="background:#fff" href={withBase('how-it-works/')}>How it works</a></p>
+  </div></section>
+  <div class="wrap page-body">
+    <h2>What we do</h2>
+    <div class="grid">
+      {services.map((s) => <div class="card"><h3><a href={withBase(`services/${s.id}/`)}>{s.data.title}</a></h3><p>{s.data.summary}</p></div>)}
+    </div>
+    <h2>Our approach</h2>
+    <ul>
+      <li>We agree scope and price in writing before work starts. This site shows no prices; every project is quoted.</li>
+      <li>We work on copies and list every change, so you can check what we did.</li>
+      <li>If we cannot resolve something from your data, we ask you rather than guess.</li>
+    </ul>
+    <Cta />
+  </div>
+</Base>
