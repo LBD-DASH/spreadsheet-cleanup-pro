@@ -1,0 +1,17 @@
+{
+  "_note": "Single source of truth for every outbound partner link. `url` is the plain official site. When a program approves us, paste the issued link into `affiliateUrl` (the only field to change). Leave `affiliateUrl` empty until approved. Never invent tracking IDs. No partners are listed on the site yet.",
+  "google-sheets": {
+    "name": "Google Sheets",
+    "kind": "tool",
+    "blurb": "Spreadsheet tool we may work inside when a client already uses it.",
+    "url": "https://workspace.google.com/products/sheets/",
+    "affiliateUrl": ""
+  },
+  "microsoft-excel": {
+    "name": "Microsoft Excel",
+    "kind": "tool",
+    "blurb": "Spreadsheet tool we may work inside when a client already uses it.",
+    "url": "https://www.microsoft.com/en-us/microsoft-365/excel",
+    "affiliateUrl": ""
+  }
+}
