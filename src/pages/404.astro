@@ -1,0 +1,7 @@
+---
+import Base from '../layouts/Base.astro';
+import { withBase } from '../lib/url';
+---
+<Base title="Page not found" description="This page does not exist. Go back to the Spreadsheet Cleanup Pro home page to see our services." path="404.html">
+  <div class="wrap page-body"><h1>Page not found</h1><p><a class="btn" href={withBase('')}>Back to home</a></p></div>
+</Base>

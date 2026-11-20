@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import { allPartners, PARTNER_REL } from '../lib/partners';
+const partners = allPartners();
+const affiliates = partners.filter((p) => p.affiliate);
+---
+<Base title="Disclosure" description="Disclosure for Spreadsheet Cleanup Pro: how we treat third-party tool links, what is paid for, and the limits of what this site claims." path="disclosure/">
+  <PageHead title="Disclosure" lead="Last updated 20 Nov 2026." />
+  <div class="wrap page-body"><div class="read">
+    <h2>Affiliate and partner links</h2>
+    {affiliates.length === 0
+      ? <p>At the moment this site earns nothing from any link. We have no affiliate arrangements. If that changes, any such link will be marked and listed here.</p>
+      : <><p>Links to the following are affiliate links, so we may earn a commission at no extra cost to you:</p><ul>{affiliates.map((p) => <li><a href={p.url} rel={PARTNER_REL}>{p.name}</a></li>)}</ul></>}
+    <h2>Tools we may mention</h2>
+    <p>We may work inside spreadsheet tools you already use. Mentioning a tool is not an endorsement and we are not affiliated with these companies.</p>
+    <ul>{partners.map((p) => <li><a href={p.url} rel={PARTNER_REL}>{p.name}</a>: {p.blurb}</li>)}</ul>
+    <h2>Other disclosures</h2>
+    <ul>
+      <li>This service is AI-assisted. A person reviews the work, and client data is never sent to external AI models.</li>
+      <li>We publish no prices, results, testimonials or statistics on this site.</li>
+      <li>Nothing here is a guarantee of any outcome.</li>
+    </ul>
+  </div></div>
+</Base>

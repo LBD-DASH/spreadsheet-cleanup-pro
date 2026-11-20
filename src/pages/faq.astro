@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Faq from '../components/Faq.astro';
+import Cta from '../components/Cta.astro';
+import { faqLd } from '../lib/faq';
+const items = [
+  { q: 'What does Spreadsheet Cleanup Pro do?', a: 'We turn messy spreadsheets into clean, consistent records, and can build dashboards and recurring reports on top of them. The work is AI-assisted and checked by a person.' },
+  { q: 'Who is it for?', a: 'Small firms that keep important data in spreadsheets and have outgrown tidying it by hand.' },
+  { q: 'How much does it cost?', a: 'Every project is quoted individually after we understand the scope. This site does not publish prices.' },
+  { q: 'Does my data go to external AI models?', a: 'No. We commit that client data is never sent to external AI models. See the privacy page for how we handle files.' },
+  { q: 'Do you change my original file?', a: 'No. We work on a copy and give you a list of what changed.' },
+  { q: 'Can you guarantee a particular result?', a: 'We do not make guarantees about outcomes. We agree the scope in writing, deliver what was agreed, and flag anything we could not resolve from your data.' },
+  { q: 'How do I get a quote?', a: 'Enquiries are opening soon. The Request a quote page will carry the contact method once it is set up.' },
+  { q: 'Which tools do you work in?', a: 'We work in the spreadsheet or dashboard tool agreed with you per project, usually one you already use.' },
+];
+---
+<Base title="Frequently asked questions" description="Answers about Spreadsheet Cleanup Pro: what we do, how quotes work, how client data is handled and what we do not promise." path="faq/" jsonLd={[faqLd(items)]}>
+  <PageHead title="Frequently asked questions" />
+  <div class="wrap page-body"><div class="read"><Faq items={items} /><Cta /></div></div>
+</Base>

@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Cta from '../components/Cta.astro';
+import { withBase } from '../lib/url';
+---
+<Base title="About Spreadsheet Cleanup Pro" description="About Spreadsheet Cleanup Pro: an AI-assisted data cleanup and reporting service for small firms, run by Kevin Britz, with plain limits stated up front." path="about/">
+  <PageHead title="About" />
+  <div class="wrap page-body"><div class="read">
+    <p>Spreadsheet Cleanup Pro is an AI-assisted data cleanup and reporting service for small firms, run by Kevin Britz.</p>
+    <h2>Our principles</h2>
+    <ul>
+      <li>We describe the work and its limits plainly. This site contains no invented statistics, testimonials, client names or results.</li>
+      <li>We agree scope and price in writing before starting.</li>
+      <li>Client data is never sent to external AI models.</li>
+      <li>We say when we cannot resolve something, instead of guessing.</li>
+    </ul>
+    <p>This is a new service, so there are no case studies to show yet. When there are, they will appear only with the client's permission.</p>
+    <p>See <a href={withBase('privacy/')}>privacy</a> and <a href={withBase('disclosure/')}>disclosure</a>.</p>
+    <Cta />
+  </div></div>
+</Base>
